@@ -6,4 +6,6 @@ and parity bits have been taken into account as well.
 
 Many embedded systems rely on RS232 for serial communication, enabling interaction with external devices, debugging, and 
 firmware updates.
+
+
 ![Overview of RS232](./RS232.jpg)
