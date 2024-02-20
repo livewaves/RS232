@@ -12,10 +12,10 @@ end RS232_RX;
 
 architecture Behavioral of RS232_RX is
 
-    signal      Data_Out_Int        :   unsigned(15 downto 0)    :=(others=>'0');
-    signal      Valid_Int           :   std_logic               :='0';
-    Signal      Serial_In_Int       :   std_logic               :='0';
-    signal      Serial_In_Prev      :   std_logic               :='0';
+    signal      Data_Out_Int            :   unsigned(15 downto 0)    :=(others=>'0');
+    signal      Valid_Int               :   std_logic                :='0';
+    Signal      Serial_In_Int           :   std_logic                :='0';
+    signal      Serial_In_Prev          :   std_logic                :='0';
     
     --Baud Rate is 9600 --> 104.16 us
     --Clock is 100 MHz --> 10 ns for each period
@@ -55,7 +55,7 @@ begin
         end if;
         
         if (Bit_Width_Count=Baud_Rate_9600 ) then
-            Bit_Width_Count                            <= (others=>'0');
+            Bit_Width_Count                             <= (others=>'0');
             Data_Bit_Count      <= Data_Bit_Count + 1;
             Data_Out_Int(to_integer(Data_Bit_Count))    <= Serial_In_Int;
             Parity				<=		Parity xor Serial_In_Int;
